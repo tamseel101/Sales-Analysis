@@ -1,5 +1,6 @@
 # Sales-Analysis
-
+![dashboard-2](https://github.com/tamseel101/Sales-Analysis/assets/78289413/7c87772a-8ac1-48d4-829e-0d8a610e8e23)
+![datamodel-1](https://github.com/tamseel101/Sales-Analysis/assets/78289413/24c452c9-1b9f-4fad-9301-c903eb6223ca)
 ##User Stories
 
 The business request for this data analyst project was an executive sales report for sales managers. Based on the proposition that was made by the business, the following user stories were defined to fulfill delivery and ensure that acceptance criteria were maintained throughout the project.
@@ -85,5 +86,4 @@ Below is a screenshot of the data model after cleansed and prepared tables were 
 
 This data model also shows how FACT_Budget has been connected to FACT_InternetSales and other necessary DIM tables.
 
-![dashboard-2](https://github.com/tamseel101/Sales-Analysis/assets/78289413/7c87772a-8ac1-48d4-829e-0d8a610e8e23)
-![datamodel-1](https://github.com/tamseel101/Sales-Analysis/assets/78289413/24c452c9-1b9f-4fad-9301-c903eb6223ca)
+
