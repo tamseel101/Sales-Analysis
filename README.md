@@ -1,31 +1,28 @@
 # Sales-Analysis
+sales overview dashboard with one page with works as a dashboard and overview, with two other pages focused on combining tables for necessary details and visualizations to show sales over time, per customer and per product.
 ![dashboard-2](https://github.com/tamseel101/Sales-Analysis/assets/78289413/7c87772a-8ac1-48d4-829e-0d8a610e8e23)
-![datamodel-1](https://github.com/tamseel101/Sales-Analysis/assets/78289413/97badfca-0124-4998-a642-a2d4edc668a1)
-##User Stories
 
-The business request for this data analyst project was an executive sales report for sales managers. Based on the proposition that was made by the business, the following user stories were defined to fulfill delivery and ensure that acceptance criteria were maintained throughout the project.
+### User Stories
+
+The business requested an executive sales report for sales managers in this data analyst project. I defined user stories based on the business's proposition to ensure project delivery and adherence to acceptance criteria.
 
 | # | As a (role) | I want (request / demand) | So that I (user value) | Acceptance Criteria |
 |---|-------------|---------------------------|------------------------|---------------------|
 | 1 | Sales Manager | To get a dashboard overview of internet sales | Can follow better which customers and products sell the best | A Power BI dashboard which updates data once a day |
-| 2 | Sales Representative | A detailed overview of Internet Sales per Customers | Can follow up my customers who buy the most and whom we can sell more to | A Power BI dashboard which allows me to filter data for each customer |
+| 2 | Sales Representative | A detailed overview of Internet Sales per Customers | Can follow up with my customers who buy the most and whom we can sell more to | A Power BI dashboard which allows me to filter data for each customer |
 | 3 | Sales Representative | A detailed overview of Internet Sales per Product | Can follow up my Products that sell the most | A Power BI dashboard which allows me to filter data for each Product |
-| 4 | Sales Manager | A dashboard overview of internet sales | Follow sales over time against budget | A Power BI dashboard with graphs and KPIs comparing against budget |
+| 4 | Sales Manager | A dashboard overview of internet sales | Follow sales over time against budget | A Power BI dashboard with graphs comparing against budget |
 
 
 ```markdown
-## Data Cleansing & Transformation (SQL)
+## Data Cleansing using SQL
 
-The following tables were extracted using SQL to create the necessary data model for doing analysis and fulfilling the business needs defined in the user stories.
-
-One data source (sales budgets) was provided in Excel format and connected in the data model later in the process.
-
-Below are the SQL statements for cleansing and transforming necessary data.
+Below are the SQL statements for cleansing and transforming given data from https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms
+```
 
 ### Calendar:
 
-```SQL
--- Cleansed DIM_Date Table --
+```
 SELECT 
   [DateKey], 
   [FullDateAlternateKey] AS Date, 
@@ -43,8 +40,8 @@ WHERE
 
 ### Customers:
 
-```SQL
--- Cleansed DIM_Customers Table --
+```
+-- Cleansed Customers Table --
 SELECT 
   c.customerkey AS CustomerKey, 
   c.firstname AS [First Name], 
@@ -62,8 +59,8 @@ ORDER BY
 
 ### Products:
 
-```SQL
--- Cleansed DIM_Products Table --
+```
+-- Cleansed Products Table --
 SELECT 
   p.[ProductKey], 
   p.[ProductAlternateKey] AS ProductItemCode, 
@@ -77,13 +74,14 @@ SELECT
   p.[EnglishDescription] AS [Product Description], 
   ISNULL (p.Status, 'Outdated') AS [Product Status]
 FROM 
-  [AdventureWorksDW2019].[dbo].[DimProduct] as p
+  [AdventureWorksDW].[dbo].[DimProduct] as p
   LEFT JOIN dbo.DimProductSubcategory AS ps ON ps.ProductSubcategoryKey = p.ProductSubcategoryKey
 ```
 ```
 Data Model
 Below is a screenshot of the data model after cleansed and prepared tables were read into Power BI.
 
-This data model also shows how FACT_Budget has been connected to FACT_InternetSales and other necessary DIM tables.
-
+This data model also shows how Budget has been connected to Sales and other necessary tables.
+```
+![datamodel-1](https://github.com/tamseel101/Sales-Analysis/assets/78289413/97badfca-0124-4998-a642-a2d4edc668a1)
 
