@@ -1,6 +1,6 @@
 # Sales-Analysis
 ![dashboard-2](https://github.com/tamseel101/Sales-Analysis/assets/78289413/7c87772a-8ac1-48d4-829e-0d8a610e8e23)
-![datamodel-1](https://github.com/tamseel101/Sales-Analysis/assets/78289413/24c452c9-1b9f-4fad-9301-c903eb6223ca)
+![datamodel-1](https://github.com/tamseel101/Sales-Analysis/assets/78289413/97badfca-0124-4998-a642-a2d4edc668a1)
 ##User Stories
 
 The business request for this data analyst project was an executive sales report for sales managers. Based on the proposition that was made by the business, the following user stories were defined to fulfill delivery and ensure that acceptance criteria were maintained throughout the project.
