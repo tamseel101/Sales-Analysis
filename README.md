@@ -1,5 +1,7 @@
 # Sales-Analysis
-sales overview dashboard with one page with works as a dashboard and overview, with two other pages focused on combining tables for necessary details and visualizations to show sales over time, per customer and per product.
+
+Sales Overview dashboard with one page with works as a dashboard and overview, with two other pages focused on combining tables for necessary details and visualizations to show sales over time, per customer and per product.
+
 ![dashboard-2](https://github.com/tamseel101/Sales-Analysis/assets/78289413/7c87772a-8ac1-48d4-829e-0d8a610e8e23)
 
 ### User Stories
@@ -77,11 +79,11 @@ FROM
   [AdventureWorksDW].[dbo].[DimProduct] as p
   LEFT JOIN dbo.DimProductSubcategory AS ps ON ps.ProductSubcategoryKey = p.ProductSubcategoryKey
 ```
-```
-Data Model
+
+### Data Model
 Below is a screenshot of the data model after cleansed and prepared tables were read into Power BI.
 
-This data model also shows how Budget has been connected to Sales and other necessary tables.
-```
+This data model also shows how the Budget has been connected to Sales and other necessary tables.
+
 ![datamodel-1](https://github.com/tamseel101/Sales-Analysis/assets/78289413/97badfca-0124-4998-a642-a2d4edc668a1)
 
